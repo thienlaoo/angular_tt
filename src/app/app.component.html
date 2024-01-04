@@ -1,35 +1,12 @@
 <main class="container mt-5">
   <h1 class="header">Конвертер валют</h1>
   <h2>{{ getExchangeRateString() }}</h2>
-  <div class="container_converter">
-    <div>
-      <button class="btn btn-primary" (click)="switchCurrencies()">
-        <img class="swap_image" src="./assets/swap.svg" width="25" height="25" alt="1">
-      </button>
-    </div>
-    <nav class="mb-4">
-      <div class="form-group">
-        <label for="fromCurrency">Из:</label>
-        <select id="fromCurrency" class="form-control" (change)="handleFirstCurrChange($event)" [(ngModel)]="firstcurr">
-          <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="toCurrency">В:</label>
-        <select id="toCurrency" class="form-control" (change)="handleSecondCurrChange($event)" [(ngModel)]="secondcurr">
-          <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
-        </select>
-      </div>
-    </nav>
-    <footer>
-      <div class="form-group">
-        <label for="amount1">Сумма:</label>
-        <input type="number" id="amount1" class="form-control" (input)="handleFirstInput($event)" [(ngModel)]="defaultmoney" />
-      </div>
-      <div class="form-group">
-        <label for="amount">Сумма:</label>
-        <input type="number" id="amount" class="form-control" (input)="handleSecondInput($event)" [(ngModel)]="defaultmoneyout" />
-      </div>
-    </footer>
-  </div>
+  <app-currency-converter-form
+    [currencies]="currencies"
+    [firstCurrency]="firstcurr"
+    [secondCurrency]="secondcurr"
+    [defaultMoney]="defaultMoney"
+    [defaultMoneyOut]="defaultMoneyOut"
+    [rates]="rates"
+  ></app-currency-converter-form>
 </main>

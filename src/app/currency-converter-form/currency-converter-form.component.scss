@@ -4,10 +4,22 @@
   align-items: center;
   justify-content: center;
 }
-
+.form-group{
+  margin: 10px;
+}
+.container_converter{
+  display: flex;
+}
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.btn {
+  position: relative;
+  top: 60px;
+}
+.swap_image {
+  transform: rotate(90deg);
 }
 
