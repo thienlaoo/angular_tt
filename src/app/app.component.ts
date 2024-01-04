@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {CurrencyExchangeService} from "./currency-exchange.service";
-import {CurrencyConverterFormComponent} from "./currency-converter-form/currency-converter-form.component";
 
 interface Rates {
   [key: string]: number;
@@ -19,7 +18,6 @@ export class AppComponent implements OnInit{
   public secondcurr = this.currencies[1];
   public defaultMoney = 1000;
   public defaultMoneyOut = 0;
-
   constructor(
     private currencyExchangeService: CurrencyExchangeService
   ) {}
